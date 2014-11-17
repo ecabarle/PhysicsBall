@@ -1,0 +1,27 @@
+float locX, locY;
+int sz=50;
+float velX, velY;
+float accX;
+float gravity;
+
+void setup(){
+size(700,600);
+locX=width/2;
+locY=sz;
+velX=0;
+velY=0;
+gravity=1;
+accX=0;
+}
+
+void draw(){
+background(0);
+ellipse(locX,locY, sz, sz);
+velX+=gravity;
+locY+=velY;
+locX+=velX;
+if(locX+sz/2>width){
+locX=width-sz/2;
+velX*=-1;
+}
+}
